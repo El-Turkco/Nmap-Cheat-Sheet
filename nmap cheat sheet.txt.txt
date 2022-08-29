@@ -1,0 +1,37 @@
+Nmap: Ağdaki cihazları tarar ve tespit etmeye yarayan çok gelişmiş ve ünlü bir programdır.1997'den buna yana kullanılmaktadır.
+c,c++,python ile geliştirilmektedir.
+
+Nmap Komut ve parametreleri
+
+(+)nmap 192.168.1.1 -> Tek Ip'leri tarar.
+(+)nmap 192.168.1.1 192.168.1.15 -> Verilen IP'leri tarar. IP'ler arasında boşluk bırakarak birden çok ip taraması yapabiliriz.
+(+)nmap 192.168.1.1-254 -> 1 ile 254 arasında tarama yapmayı sağlar.
+(+)nmap 192.168.1.0/24 -> local ağda olan ağları tarar.
+(+)nmap google.com -> domain adı vererekte tarama yapabiliriz.
+(+)nmap -iL target.txt -> verilen dosyadaki İp vb tarar.
+(+) nmap 192.168.1.10 -iR 100 -> Belirli sayıda rastgele host taraması yapar.
+(+) nmap --exclude 192.168.1.10 -> dışlanmış İp ile tarama yapar(Yani verilen ip addresini yok sayar)
+(+) nmap 192.168.1.10/24 -n- -> DNS çözümlemesiz tarama yapar.
+
+
+(+)Sık Kullanılan Nmap Komutları(+)
+
+(+) nmap 192.168.1.10/24 -sn -> port taramasız ve isim çözümlemesiz tarama yapar.
+(+) nmap 192.168.1.10/24 -Pn -> pingsiz sadece port taraması yapar.
+(+) nmap 192.168.1.10/24 -Pa -> TCP ACK flag ile ping taraması yapar.
+(+) nmap 192.168.1.10/24 -sT -> TCP port taraması.
+(+) nmap 192.168.1.10/24 -p 21-100 -> 21 ile 100 arasındaki portları tarar.
+(+) nmap 192.168.1.10/24 -sS -> Syn flag ile TCP port taraması yapar.
+(+) nmap 192.168.1.10/24 -p- -> Tüm portları tarar.
+(+) nmap 192.168.1.10/24 -sV  -> Porta çalışan arka servisin versiyonunu gösterir.
+(+) nmap 192.168.1.10 -T4 -> Hızlı ve agresif şeklinde bir tarama sağlar.
+(+) nmap 192.168.1.10 -A -> Os,versiyon ve güvenlik açıklarını tarar.
+
+(+) Nmap script'ler ile Çalışma(+)
+
+(+) Script maap /usr/share/nmap/scripts : script'leri bu konumdan bakabiliriz.
+
+(+) nmap 192.168.1.10 -sC -> En bilinen scriptleri kullanarak bir tarama yapar.
+(+) nmap 192.168.1.10 --script Http-sql-injection -> bu şekilde bir script yapabiliriz.
+(+) nmap 192.168.1.10 --script vuln -> Tüm scriptler ile tarama yapar.
+
